@@ -5,3 +5,10 @@
 - MVVM
 - VIPER
 - Clean Architecture
+
+
+## TODO
+
+- Flux
+- RxSwift
+- ReactiveCocoa
