@@ -9,11 +9,7 @@
 import UIKit
 import Kingfisher
 
-protocol CatView: class {
-    func showCats(cats: [CatCellData])
-}
-
-class CatListVC: UIViewController, CatView {
+class CatListVC: UIViewController, CatPresenterOutput {
 
     private lazy var collectionView: UICollectionView = {
         let cellWidth = self.view.frame.width / 3
@@ -56,7 +52,7 @@ class CatListVC: UIViewController, CatView {
         presenter.showCats()
     }
 
-    func showCats(cats: [CatCellData]) {
+    func receive(cats: [CatCellData]) {
         self.cats = cats
     }
 }

@@ -12,9 +12,13 @@ protocol CatPresenter: class {
     func showCats()
 }
 
+protocol CatPresenterOutput: class {
+    func receive(cats: [CatCellData])
+}
+
 class CatPresenterImpl: CatPresenter, CatUseCaseOutput {
-    weak var view: CatView?
     var useCase: CatUseCase!
+    weak var output: CatPresenterOutput?
 
 
     func showCats() {
@@ -23,6 +27,6 @@ class CatPresenterImpl: CatPresenter, CatUseCaseOutput {
 
 
     func receive(cats: [CatCellData]) {
-        view?.showCats(cats: cats)
+        output?.receive(cats: cats)
     }
 }

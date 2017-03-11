@@ -15,7 +15,7 @@ struct EntryPoint {
         let interactor = CatInteractorImpl()
         
         view.presenter       = presenter
-        presenter.view       = view
+        presenter.output     = view
         presenter.interacter = interactor
         interactor.output    = presenter
 

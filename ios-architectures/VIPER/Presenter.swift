@@ -16,9 +16,13 @@ protocol CatPresenter: class {
     func showCats()
 }
 
+protocol CatPresenterOutput: class {
+    func receive(cats: [CatCellData])
+}
+
 class CatPresenterImpl: CatPresenter, CatOutput {
-    weak var view: CatView?
     var interacter: CatInteracter!
+    weak var output: CatPresenterOutput?
 
 
     func showCats() {
@@ -28,6 +32,6 @@ class CatPresenterImpl: CatPresenter, CatOutput {
 
     func receive(cats: [Cat]) {
         let cats = cats.map { CatCellData(url: URL(string: $0.url)) }
-        view?.showCats(cats: cats)
+        output?.receive(cats: cats)
     }
 }
