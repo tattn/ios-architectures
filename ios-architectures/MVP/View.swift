@@ -34,7 +34,7 @@ class CatListVC: UIViewController, CatView {
         return collectionView
     }()
 
-    var presenter: CatPresenter?
+    var presenter: CatPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +42,7 @@ class CatListVC: UIViewController, CatView {
         title = "Cat List"
 
         setupUI()
-        presenter?.showCats()
+        presenter.showCats()
     }
 
     private func setupUI() {
@@ -55,14 +55,14 @@ class CatListVC: UIViewController, CatView {
     }
 
     @objc private func pullToRefresh() {
-        presenter?.showCats()
+        presenter.showCats()
     }
 }
 
 extension CatListVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return presenter?.numberOfCats ?? 0
+        return presenter.numberOfCats
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -71,7 +71,7 @@ extension CatListVC: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
-        cell.configure(with: presenter?.imageUrl(index: indexPath.row))
+        cell.configure(with: presenter.imageUrl(index: indexPath.row))
         
         return cell
     }

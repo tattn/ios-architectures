@@ -18,11 +18,11 @@ protocol CatPresenter: class {
 
 class CatPresenterImpl: CatPresenter, CatOutput {
     weak var view: CatView?
-    var interacter: CatInteracter?
+    var interacter: CatInteracter!
 
 
     func showCats() {
-        interacter?.getCats()
+        interacter.getCats()
     }
 
 

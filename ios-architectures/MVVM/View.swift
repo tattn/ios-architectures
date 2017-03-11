@@ -30,7 +30,7 @@ class CatListVC: UIViewController {
         return collectionView
     }()
 
-    var viewModel: CatViewModel?
+    var viewModel: CatViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,11 +38,11 @@ class CatListVC: UIViewController {
         title = "Cat List"
 
         setupUI()
-        viewModel?.bind { [weak self] in
+        viewModel.bind { [weak self] in
             self?.collectionView.refreshControl?.endRefreshing()
             self?.collectionView.reloadData()
         }
-        viewModel?.reloadData()
+        viewModel.reloadData()
     }
 
     private func setupUI() {
@@ -50,14 +50,14 @@ class CatListVC: UIViewController {
     }
 
     @objc private func pullToRefresh() {
-        viewModel?.reloadData()
+        viewModel.reloadData()
     }
 }
 
 extension CatListVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel?.count ?? 0
+        return viewModel.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -66,7 +66,7 @@ extension CatListVC: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
-        cell.configure(with: viewModel?[indexPath.row])
+        cell.configure(with: viewModel[indexPath.row])
         
         return cell
     }

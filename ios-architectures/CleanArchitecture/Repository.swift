@@ -17,11 +17,11 @@ protocol CatRepositoryOutput: class {
 }
 
 class CatRepositoryImpl: CatRepository, CatDataStoreOutput {
-    var dataStore: CatDataStore?
+    var dataStore: CatDataStore!
     weak var output: CatRepositoryOutput?
 
     func getCats() {
-        dataStore?.getCats()
+        dataStore.getCats()
     }
 
     

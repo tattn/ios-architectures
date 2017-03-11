@@ -14,11 +14,11 @@ protocol CatPresenter: class {
 
 class CatPresenterImpl: CatPresenter, CatUseCaseOutput {
     weak var view: CatView?
-    var useCase: CatUseCase?
+    var useCase: CatUseCase!
 
 
     func showCats() {
-        useCase?.loadCats()
+        useCase.loadCats()
     }
 
 

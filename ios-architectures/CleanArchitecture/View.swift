@@ -34,7 +34,7 @@ class CatListVC: UIViewController, CatView {
         return collectionView
     }()
 
-    var presenter: CatPresenter?
+    var presenter: CatPresenter!
 
     fileprivate var cats: [CatCellData] = [] {
         didSet {
@@ -49,7 +49,7 @@ class CatListVC: UIViewController, CatView {
         title = "Cat List"
 
         setupUI()
-        presenter?.showCats()
+        presenter.showCats()
     }
 
     private func setupUI() {
@@ -57,7 +57,7 @@ class CatListVC: UIViewController, CatView {
     }
 
     @objc private func pullToRefresh() {
-        presenter?.showCats()
+        presenter.showCats()
     }
 
     func showCats(cats: [CatCellData]) {

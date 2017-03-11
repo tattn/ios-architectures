@@ -17,11 +17,11 @@ protocol CatUseCaseOutput: class {
 }
 
 class CatUseCaseImpl: CatUseCase, CatRepositoryOutput {
-    var repository: CatRepository?
+    var repository: CatRepository!
     weak var output: CatUseCaseOutput?
 
     func loadCats() {
-        repository?.getCats()
+        repository.getCats()
     }
 
     func receive(cats: [Cat]) {
