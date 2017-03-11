@@ -1,10 +1,10 @@
 # iOS Architectures
 
-- [MVC](https://github.com/tattn/ios-architectures/tree/master/ios-architectures/MVC)
-- [MVP](https://github.com/tattn/ios-architectures/tree/master/ios-architectures/MVP)
-- [MVVM](https://github.com/tattn/ios-architectures/tree/master/ios-architectures/MVVM)
-- [VIPER](https://github.com/tattn/ios-architectures/tree/master/ios-architectures/VIPER)
-- [Clean Architecture](https://github.com/tattn/ios-architectures/tree/master/ios-architectures/CleanArchitecture)
+- [x] [MVC](https://github.com/tattn/ios-architectures/tree/master/ios-architectures/MVC)
+- [x] [MVP](https://github.com/tattn/ios-architectures/tree/master/ios-architectures/MVP)
+- [x] [MVVM](https://github.com/tattn/ios-architectures/tree/master/ios-architectures/MVVM)
+- [x] [VIPER](https://github.com/tattn/ios-architectures/tree/master/ios-architectures/VIPER)
+- [x] [Clean Architecture](https://github.com/tattn/ios-architectures/tree/master/ios-architectures/CleanArchitecture)
 
 ## Sample App
 
@@ -12,6 +12,8 @@
 
 ## TODO
 
-- Flux
-- RxSwift
-- ReactiveCocoa
+- [ ] Flux
+- [ ] Flux + RxSwift
+- [ ] MVVM + RxSwift
+- [ ] MVVM + ReactiveCocoa
+- [ ] MVA(Minimum Viable Architecture)
