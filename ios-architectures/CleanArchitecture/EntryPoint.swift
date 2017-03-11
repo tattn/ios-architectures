@@ -17,12 +17,16 @@ struct EntryPoint {
         let dataStore  = CatDataStoreImpl()
         
         view.presenter       = presenter
-        presenter.output     = view
+
         presenter.useCase    = useCase
+        presenter.output     = view
+
         useCase.repository   = repository
         useCase.output       = presenter
+
         repository.dataStore = dataStore
         repository.output    = useCase
+
         dataStore.output     = repository
 
         return view
