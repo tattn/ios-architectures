@@ -13,11 +13,7 @@ class CatListVC: UIViewController {
 
     private lazy var collectionView: UICollectionView = {
         let cellWidth = self.view.frame.width / 3
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: cellWidth, height: cellWidth)
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        layout.minimumInteritemSpacing = 0
-        layout.minimumLineSpacing = 0
+        let layout = CatCollectionViewLayout(itemSize: cellWidth)
 
         let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
         collectionView.register(CatListCell.self, forCellWithReuseIdentifier: "cell")
