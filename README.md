@@ -16,4 +16,5 @@
 - [ ] Flux + RxSwift
 - [ ] MVVM + RxSwift
 - [ ] MVVM + ReactiveCocoa
-- [ ] MVA(Minimum Viable Architecture)
+- [ ] MVVM-C
+- [ ] My MVA (Minimum Viable Architecture)
