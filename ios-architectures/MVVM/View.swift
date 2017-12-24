@@ -35,8 +35,10 @@ class CatListVC: UIViewController {
 
         setupUI()
         viewModel.bind { [weak self] in
-            self?.collectionView.refreshControl?.endRefreshing()
-            self?.collectionView.reloadData()
+            DispatchQueue.main.async {
+                self?.collectionView.refreshControl?.endRefreshing()
+                self?.collectionView.reloadData()
+            }
         }
         viewModel.reloadData()
     }

@@ -36,7 +36,9 @@ class CatListVC: UIViewController {
         setupUI()
         fetchData { [weak self] cats in
             self?.cats = cats
-            self?.collectionView.reloadData()
+            DispatchQueue.main.async {
+                self?.collectionView.reloadData()
+            }
         }
     }
 
@@ -47,13 +49,15 @@ class CatListVC: UIViewController {
     @objc private func reloadData() {
         fetchData { [weak self] cats in
             self?.cats = cats
-            self?.collectionView.refreshControl?.endRefreshing()
-            self?.collectionView.reloadData()
+            DispatchQueue.main.async {
+                self?.collectionView.refreshControl?.endRefreshing()
+                self?.collectionView.reloadData()
+            }
         }
     }
 
     private func fetchData(completion: @escaping (([Cat]) -> Void)) {
-        guard let url = URL(string: "https://thecatapi.com/api/images/get?format=xml&results_per_page=20&size=small") else {
+        guard let url = URL(string: "http://thecatapi.com/api/images/get?format=xml&results_per_page=20&size=small") else {
             completion([])
             return
         }

@@ -36,7 +36,7 @@ class CatPresenterImpl: CatPresenter {
     }
     
     func showCats() {
-        guard let url = URL(string: "https://thecatapi.com/api/images/get?format=xml&results_per_page=20&size=small") else {
+        guard let url = URL(string: "http://thecatapi.com/api/images/get?format=xml&results_per_page=20&size=small") else {
             return
         }
 
@@ -53,7 +53,9 @@ class CatPresenterImpl: CatPresenter {
                 .flatMap { (id: $0["id"].element?.text ?? "", url: $0["url"].element?.text ?? "") }
                 .map { Cat(id: $0.id, url: $0.url) }
 
-            self?.view.reloadData()
+            DispatchQueue.main.async {
+                self?.view.reloadData()
+            }
 
         }.resume()
     }

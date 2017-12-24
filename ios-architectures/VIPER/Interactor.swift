@@ -21,7 +21,7 @@ class CatInteractorImpl: CatInteracter {
     weak var output: CatOutput?
     
     func getCats() {
-        guard let url = URL(string: "https://thecatapi.com/api/images/get?format=xml&results_per_page=20&size=small") else {
+        guard let url = URL(string: "http://thecatapi.com/api/images/get?format=xml&results_per_page=20&size=small") else {
             return
         }
 

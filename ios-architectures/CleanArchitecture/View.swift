@@ -30,8 +30,10 @@ class CatListVC: UIViewController, CatPresenterOutput {
 
     fileprivate var cats: [CatCellData] = [] {
         didSet {
-            collectionView.refreshControl?.endRefreshing()
-            collectionView.reloadData()
+            DispatchQueue.main.async {
+                self.collectionView.refreshControl?.endRefreshing()
+                self.collectionView.reloadData()
+            }
         }
     }
     
