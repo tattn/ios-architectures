@@ -1,4 +1,7 @@
-# iOS Architectures
+iOS Architectures
+===
+
+[![Swift Version](https://img.shields.io/badge/Swift-4-F16D39.svg)](https://developer.apple.com/swift)
 
 - [x] [MVC](https://github.com/tattn/ios-architectures/tree/master/ios-architectures/MVC)
 - [x] [MVP](https://github.com/tattn/ios-architectures/tree/master/ios-architectures/MVP)
