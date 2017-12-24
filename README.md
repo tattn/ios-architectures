@@ -17,6 +17,7 @@ iOS Architectures
 
 - [ ] Flux
 - [ ] Flux + RxSwift
+- [ ] Redux + ReSwift
 - [ ] MVVM + RxSwift
 - [ ] MVVM + ReactiveCocoa
 - [ ] MVVM-C
